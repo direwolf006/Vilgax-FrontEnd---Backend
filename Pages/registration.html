@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/E-Mobile Store/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript">
+        const formValidation=()=>{
+                let data={
+                    fullname:document.forms["registration_form"]["fullname"].value,
+                    address:document.forms["registration_form"]["address"].value,
+                    city:document.forms["registration_form"]["city"].value,
+                    email:document.forms["registration_form"]["email"].value,
+                    password:document.forms["registration_form"]["password"].value,
+                    password_again:document.forms["registration_form"]["password_again"].value,
+                    gender:document.forms["registration_form"]["gender"].value,
+                    agree:document.forms["registration_form"]["agree"].checked
+                }
+                var valid=true;
+                if(data.fullname.length==0 && data.fullname.length==0 && data.city.length==0 && data.email.length==0 && data.password.length==0 &&
+                    data.password_again.length==0 && data.gender.length==0){
+                        alert( "Mentioned details are required to register");
+                        valid=false;
+                }
+                else{
+                    if(data.fullname.length===0){
+                        alert( "Fullname is required");
+                        valid=false;
+                    }else{
+                        if (!(data.fullname).match(/^[a-zA-Z.]+$/)){
+                            alert( "You must enter a valid fullname."); 
+                            valid=false;
+                        }
+                    }
+                    
+                    if(data.address.length===0){
+                        alert( "address is required");
+                        valid=false;
+                    }else{
+                        if (!(data.address).match(/^[a-zA-Z0-9 \-.,:]+$/)){
+                            alert( "You must enter a valid address."); 
+                            valid=false;
+                        }
+                    }
+                    
+                    if(data.city.length===0){
+                        alert( "city is required");
+                        valid=false;
+                    }else{
+                        if (!(data.city).match(/^[a-zA-Z]+$/)){
+                            alert( "You must enter a valid city."); 
+                            valid=false;
+                        }
+                    }
+
+                    if(data.gender.length===0){
+                        alert( "gender is required");
+                        valid=false;
+                    }
+
+                    if(data.email.length===0){
+                        alert( "email is required");
+                        valid=false;
+                    }else{
+                        if (!(data.email).match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)){
+                            alert( "You must enter a valid email address."); 
+                            valid=false;
+                        }
+                    }
+                    
+                    if(data.password.length===0){
+                        alert( "password is required");
+                        valid=false;
+                    }else{
+                        if (!(data.password).match(/^[a-zA-Z0-9@#$%&]{8,20}$/)){
+                            alert( "You must enter a valid password."); 
+                            valid=false;
+                        }
+                    }
+                    
+                    if(data.password_again.length===0){
+                        alert( "Retype password is required");
+                        valid=false;
+                    }else{
+                        if (data.password_again!=data.password){
+                            alert( "Entered passwords do not match"); 
+                            valid=false;
+                        }
+                    }
+                    if(!data.agree){
+                        alert( "you have not agreed to the terms and conditions."); 
+                        valid=false;
+                    }
+                }
+                if(valid==true){
+                    alert( "Entered details are valid"); 
+                }
+            return valid
+        }
+    </script>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0; margin-bottom: 220px;">
+    <div class ="header">
+        <img src ="/E-Mobile Store/images/icon.png" alt ="Vilgax" class = "logo">   
+        <div class="heading">
+            Vilgax E-Mobile Store
+        </div>
+        <div class="header-buttons">
+            <a href="/E-Mobile Store/Pages/home.html" class="header-button">
+                <div class="header_btn_text">
+                    Home
+                </div>
+            </a>
+            
+            <a href="/E-Mobile Store/Pages/Cart.html" class="header-button">
+                <div class="header_btn_text">
+                    Cart
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/Offers.html" class="header-button">
+                <div class="header_btn_text">
+                    Offers
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/ContactUs.html" class="header-button">
+                <div class="header_btn_text">
+                    Contact Us
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/Login.html" class="header-button">
+                <div class="header_btn_text">
+                    Login
+                </div>
+            </a>
+        </div>
+    </div>
+    <div>
+        <h1 style="text-align: center;">Vilgax Registration Registration</h1>
+        <form class="form" name="registration_form" onsubmit="return formValidation()">
+            <fieldset class="fieldset">
+                <legend style="text-align: start; color: rgb(38, 119, 212); font-weight: bold;">Sign Up</legend>
+                <h4 class="inner-heading">Enter your personal details below </h4>
+                <div class="input-container">
+                    <input type="text" id="fullname" placeholder="Fullname" class="input-field"><br><br>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="address" placeholder="Address" class="input-field"><br><br>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="city" placeholder="City" class="input-field"><br><br>
+                </div>
+                <h4 class="inner-heading">Gender</h4>
+                <div style="display: flex;">
+                    <input type="radio" id="female" name="gender" value="female" >
+                    <label for="female" style="margin-right: 10px;">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                </div>
+                <h4 class="inner-heading">Enter your account details below </h4>
+                <div class="input-container">
+                    <i class="material-icons icon">mail</i>
+                    <input type="text" id="email" placeholder="Email" class="input-field-icon"><br><br>
+                  </div>
+                  <div class="input-container">
+                    <i class="material-icons icon">lock</i>
+                    <input type="text" id="password" placeholder="Password" class="input-field-icon"><br><br>
+                  </div>
+                  <div class="input-container">
+                    <i class="material-icons icon">lock</i>
+                    <input type="text" id="password_again" placeholder="Password Again" class="input-field-icon"><br><br>
+                  </div>
+
+                <div style="display: flex;">
+                    <input type="checkbox" id="agree" name="agree" >
+                    <label for="agree" > I agree</label>
+                </div>
+                <div style="display: flex;">
+                    <h4 class="inner-heading" style="margin-right: 1%;">Already have an account?</h4>
+                    <a href="https://github.com/" style="margin-left: 0%; margin-top: 5%; color: rgb(38, 119, 212);">Log-in</a>
+                </div>
+                <div style="justify-content: flex-end; display: flex;">
+                    <button class="submit-button"  >Submit <i class="material-icons" style="font-size:large; padding-right: 3px;padding-left: 5px;">send</i></button>
+                </div>
+            </fieldset>
+           </form>
+    </div>
+    <footer >
+        <p style="text-align: center;">
+          Vilgax Stores
+        </p>
+        <p style="text-align: center;">
+          <a href="mailto:rv7685@srmist.edu.in">Mail us
+          </a>
+        </p>
+      </footer>
+</body>
+</html>

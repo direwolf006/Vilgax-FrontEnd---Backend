@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/E-Mobile Store/style.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        const formValidation=()=>{
+                let data={
+                    username:document.forms["login_form"]["username"].value,
+                    password:document.forms["login_form"]["password"].value
+                }
+                console.log(data);
+                var valid=true
+                if(data.username.length===0&&data.password.length===0){
+                    alert( "Login credentials are required."); 
+                    valid=false
+                }else{
+                    if(data.username.length===0){
+                    alert( "Email address is required");
+                    valid=false
+                    }else{
+                        if (!(data.username).match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)){
+                            alert( "You must enter a valid email address."); 
+                            valid=false
+                        }
+                    }
+                    if(data.password.length===0){
+                        alert( "Password is required");
+                        valid=false
+                    }else{
+                        if (!(data.password).match(/^[a-zA-Z0-9@#$%&]{8,20}$/)){
+                            alert( "You must enter a valid password"); 
+                            valid=false
+                        }
+                    }
+                }
+                if(valid==true){
+                    alert( "Entered details are valid"); 
+                }
+                console.log(valid);
+            return valid
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div class ="header">
+        <img src ="/E-Mobile Store/images/icon.png" alt ="Vilgax" class = "logo">   
+        <div class="heading">
+            Vilgax E-Mobile Store
+        </div>
+        <div class="header-buttons">
+            <a href="/E-Mobile Store/Pages/home.html" class="header-button">
+                <div class="header_btn_text">
+                    Home
+                </div>
+            </a>
+            
+            <a href="/E-Mobile Store/Pages/Cart.html" class="header-button">
+                <div class="header_btn_text">
+                    Cart
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/Offers.html" class="header-button">
+                <div class="header_btn_text">
+                    Offers
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/ContactUs.html" class="header-button">
+                <div class="header_btn_text">
+                    Contact Us
+                </div>
+            </a>
+            <a href="/E-Mobile Store/Pages/Login.html" class="header-button">
+                <div class="header_btn_text">
+                    Login
+                </div>
+            </a>
+        </div>
+    </div>
+    <div>
+        <h1 style="text-align: center;">Login Vilgax E-Mobile Store</h1>
+        <form class="form" name="login_form" onsubmit="return formValidation()">
+            <fieldset class="fieldset">
+                <legend style="text-align: start; color: rgb(38, 119, 212); font-weight: bold;">Sign in to your account</legend>
+                <h4 class="inner-heading">Please enter your username and password to log in </h4>
+                <div class="input-container">
+                    <i class="material-icons icon">mail</i>
+                    <input type="text" id="username" placeholder="Username" name="username" class="input-field-icon"><br><br>
+                  </div>
+                  <div class="input-container">
+                    <i class="material-icons icon">lock</i>
+                    <input type="text" id="password" placeholder="Password" name="password" class="input-field-icon"><br><br>
+                  </div>
+                  <div style="display: flex;margin-top: -30px;">
+                    <a href="https://github.com/" style="margin-left: 0%; margin-top: 5%; color: rgb(38, 119, 212);">Forgot password ?</a>
+                  </div>
+                <div style="justify-content: flex-end; display: flex;">
+                    <button class="submit-button" type="submit" value="submit" >Login <i class="material-icons" style="font-size:large; padding-right: 3px;padding-left: 5px;">send</i></button>
+                </div>
+                <div style="text-align: center;margin-top: 5%">
+                    <a href="/E-Mobile Store/Pages/registration.html" style="margin-left: 0%; margin-top: 20%; color: rgb(38, 119, 212);">new user ? Click here to register </a>
+                  </div>
+            </fieldset>
+           </form>
+           
+    </div>
+    <footer >
+        <p style="text-align: center;">
+          Vilgax Stores
+        </p>
+        <p style="text-align: center;">
+          <a href="mailto:rv7685@srmist.edu.in">Mail us
+          </a>
+        </p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title> Vilgax Stores </title>
+        <link rel = "stylesheet" href="/E-Mobile Store/style.css">
+
+    </head>
+    <body style="margin: 0;">
+        
+        <div class ="header">
+            <img src ="/E-Mobile Store/images/icon.png" alt ="Vilgax" class = "logo">   
+            <div class="heading">
+                Vilgax E-Mobile Store
+            </div>
+            <div class="header-buttons">
+                <a href="/E-Mobile Store/Pages/home.html" class="header-button">
+                    <div class="header_btn_text">
+                        Home
+                    </div>
+                </a>
+                
+                <a href="/E-Mobile Store/Pages/Cart.html" class="header-button">
+                    <div class="header_btn_text">
+                        Cart
+                    </div>
+                </a>
+                <a href="/E-Mobile Store/Pages/Offers.html" class="header-button">
+                    <div class="header_btn_text">
+                        Offers
+                    </div>
+                </a>
+                <a href="/E-Mobile Store/Pages/ContactUs.html" class="header-button">
+                    <div class="header_btn_text">
+                        Contact Us
+                    </div>
+                </a>
+                <a href="/E-Mobile Store/Pages/Login.html" class="header-button">
+                    <div class="header_btn_text">
+                        Login
+                    </div>
+                </a>
+            </div>
+        </div>
+        <h1 style="text-align: center;">Your Cart</h1>
+
+            <table class="offer-table">
+                <tr>
+                    <th>Product Name</th>
+                    <th>MRP ( Rs. )</th>
+                </tr>
+                <?php
+                 include 'C:\xampp\htdocs\E-Mobile Store\Connections\CartItems.php';
+                 ?>
+
+            </table>
+        <footer >
+            <p style="text-align: center;">
+              Vilgax Stores
+            </p>
+            <p style="text-align: center;">
+              <a href="mailto:rv7685@srmist.edu.in">Mail us
+              </a>
+            </p>
+          </footer> 
+    </body>
+</html>
