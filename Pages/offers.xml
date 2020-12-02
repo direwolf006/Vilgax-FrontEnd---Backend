@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./offers.xsl"?>
+<offers>
+    <offer>
+        <model>Google Pixel 4a</model>
+        <discount>15</discount>
+        <mrp>40,000</mrp>
+        <offer_price>34,000</offer_price>
+    </offer>
+    <offer>
+        <model>Iphone 9	</model>
+        <discount>5</discount>
+        <mrp>60,000</mrp>
+        <offer_price>57,000</offer_price>
+    </offer>
+    <offer>
+        <model>Motorola one fusion	</model>
+        <discount>10</discount>
+        <mrp>25,000</mrp>
+        <offer_price>22,500</offer_price>
+    </offer>
+    <offer>
+        <model>One Plus 8 Pro</model>
+        <discount>10</discount>
+        <mrp>60,000</mrp>
+        <offer_price>54,000</offer_price>
+    </offer>
+    <offer>
+        <model>Realme X3 Pro</model>
+        <discount>15</discount>
+        <mrp>50,000	</mrp>
+        <offer_price>42,500</offer_price>
+    </offer>
+    <offer>
+        <model>Samsung Galaxy 20</model>
+        <discount>5</discount>
+        <mrp>50,000</mrp>
+        <offer_price>47,500</offer_price>
+    </offer>
+</offers>

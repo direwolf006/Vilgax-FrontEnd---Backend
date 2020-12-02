@@ -2,7 +2,19 @@
     <head>
         <title> Vilgax Stores </title>
         <link rel = "stylesheet" href="/E-Mobile Store/style.css">
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            const removeFromCart=(name)=>{
+              $.ajax({
+                type: "POST",
+                url: '../Connections/RemoveItem.php',
+                dataType: 'json',
+                data: {name:name}
+              })
+            }
+            
+          </script>
     </head>
     <body style="margin: 0;">
         
@@ -23,7 +35,7 @@
                         Cart
                     </div>
                 </a>
-                <a href="/E-Mobile Store/Pages/Offers.html" class="header-button">
+                <a href="/E-Mobile Store/Pages/Offers.xml" class="header-button">
                     <div class="header_btn_text">
                         Offers
                     </div>
@@ -46,6 +58,7 @@
                 <tr>
                     <th>Product Name</th>
                     <th>MRP ( Rs. )</th>
+                    <th>Remove</th>
                 </tr>
                 <?php
                  include 'C:\xampp\htdocs\E-Mobile Store\Connections\CartItems.php';

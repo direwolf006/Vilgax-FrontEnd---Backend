@@ -1,0 +1,7 @@
+.view-expenses-btn{
+    background-color: #0093E9;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    text-align: center;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="pages.xsl"?>
+<Resource>
+<Physical>
+    <Physical_Help UID="123">
+        <id>01</id>
+        <name>Vid- Muscle Building</name>
+        <type>Youtube Video</type>
+        <time>20 mins</time>
+    </Physical_Help>
+    <Physical_Help UID="245">
+        <id>02</id>
+        <name>Weight Loss</name>
+        <type>Article with Video</type>
+        <time>50 mins</time>
+    </Physical_Help>
+    <Physical_Help UID="347">
+        <id>03</id>
+        <name>Dietary Regulations</name>
+        <type>Article</type>
+        <time>30 mins</time>
+    </Physical_Help>
+    <Physical_Help UID="589">
+        <id>04</id>
+        <name>Cardio</name>
+        <type>Article with Video</type>
+        <time>35 mins</time>
+    </Physical_Help>
+</Physical>
+<Career>
+    <Career_Help UID="114">
+        <id>01</id>
+        <name>Vid- Selecting Stream</name>
+        <type>Video</type>
+        <time>40 mins</time>
+    </Career_Help>
+    <Career_Help UID="333">
+        <id>02</id>
+        <name>Career Options</name>
+        <type>Article with Video</type>
+        <time>125 mins</time>
+    </Career_Help>
+    <Career_Help UID="765">
+        <id>03</id>
+        <name>Booming Fields</name>
+        <type>Article with Video</type>
+        <time>65 mins</time>
+    </Career_Help>
+</Career>
+</Resource>

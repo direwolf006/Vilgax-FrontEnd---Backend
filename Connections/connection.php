@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "rittesh";
-$password = "ChangeMe$123";
+$password = "";
 $dbname="vilgax";
 
     
@@ -14,16 +14,14 @@ $dbname="vilgax";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row['phone'] . "</td>";
-        echo "<td>" . $row['discount'] . "</td>";
-        echo "<td>" . $row['mrp'] . "</td>";
-        echo "<td>" . $row['offer_price'] . "</td>";
-        echo "</tr>";
-    }
-    } else {
-    echo "0 results";
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['phone'] . "</td>";
+            echo "<td>" . $row['discount'] . "</td>";
+            echo "<td>" . $row['mrp'] . "</td>";
+            echo "<td>" . $row['offer_price'] . "</td>";
+            echo "</tr>";
+        }
     }
     $conn->close();
 ?>

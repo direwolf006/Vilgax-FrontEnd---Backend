@@ -8,7 +8,7 @@
       const addToCart=(name,price)=>{
         $.ajax({
           type: "POST",
-          url: '../Connections/AddUser.php',
+          url: '../Connections/AddItem.php',
           dataType: 'json',
           data: {name:name,price: price}
         })
@@ -34,7 +34,7 @@
                     Cart
                 </div>
             </a>
-            <a href="/E-Mobile Store/Pages/Offers.html" class="header-button">
+            <a href="/E-Mobile Store/Pages/Offers.xml" class="header-button">
                 <div class="header_btn_text">
                     Offers
                 </div>

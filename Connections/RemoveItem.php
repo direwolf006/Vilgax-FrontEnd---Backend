@@ -2,7 +2,7 @@
   header('Content-Type: application/json');
     $servername = "localhost";
     $username = "rittesh";
-    $password = "ChangeMe$123";
+    $password = "";
     $dbname="vilgax";
 
     
@@ -11,11 +11,11 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    $sql = "INSERT INTO cart (product_name,price) VALUES ('".$_POST['name']."','".$_POST['price']."');";
+    $sql = "DELETE FROM cart WHERE product_name='".$_POST['name']."';";
     $result = $conn->query($sql);
 
     if ($result === TRUE) {
-        echo "New record created successfully";
+        echo "Record deleted successfully";
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }

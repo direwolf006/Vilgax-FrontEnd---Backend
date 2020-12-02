@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title> Self-Help Website </title>
+	</head>
+
+	<script>
+		function loadResourceXML() {
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  displayResourceTable(this);
+			}
+		  };
+		  xhttp.open("GET", "page.xml", true);
+		  xhttp.send();
+		}
+		function displayResourceTable(xml) {
+		  var i;
+		  var xmlDoc = xml.responseXML;
+		  var table="<tr><th>ID Number</th>"+
+                    "<th>Name</th>"+
+                    "<th>Type of Content</th>"+
+                    "<th>Time required</th></tr>";
+		  var x = xmlDoc.getElementsByTagName("Physical_Help");
+		  for (i = 0; i <x.length; i++) { 
+			table += "<tr><td>" +
+			x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("type")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		  }
+		  document.getElementById("resource-table").innerHTML = table;
+		}
+		</script>
+		
+    <body style="margin: 0;">
+
+		<h1 style="text-align: center;">Resources</h1>
+		<button class="view_btn" type="submit" value="button" onclick="loadResourceXML()" >
+			View Details
+			<i class="material-icons" style="font-size:large; padding-right: 3px;padding-left: 5px;">
+			  Self-Help Resources
+			</i>
+		</button>
+
+
+			<table id="resource-table" class="resource-table"></table>
+</body>
+</html>
